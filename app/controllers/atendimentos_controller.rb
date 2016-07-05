@@ -15,6 +15,8 @@ class AtendimentosController < ApplicationController
   # GET /atendimentos/new
   def new
     @atendimento = Atendimento.new
+    #atendimento sempre inicia com status A = Aberto
+    @atendimento.status = "A"
   end
 
   # GET /atendimentos/1/edit

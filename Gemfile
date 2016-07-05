@@ -50,3 +50,4 @@ gem 'bcrypt'
 gem 'coffee-script-source', '1.8.0'
 gem 'bootstrap-sass'
 gem "twitter-bootstrap-rails"
+gem 'rails-i18n', '~> 4.0.0'
