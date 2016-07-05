@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tipoatendimentos</h1>
+<h1>Tipos de atendimentos</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Descricao</th>
@@ -14,9 +14,9 @@
     <% @tipoatendimentos.each do |tipoatendimento| %>
       <tr>
         <td><%= tipoatendimento.descricao %></td>
-        <td><%= link_to 'Show', tipoatendimento %></td>
-        <td><%= link_to 'Edit', edit_tipoatendimento_path(tipoatendimento) %></td>
-        <td><%= link_to 'Destroy', tipoatendimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', tipoatendimento %></td>
+        <td><%= link_to 'Editar', edit_tipoatendimento_path(tipoatendimento) %></td>
+        <td><%= link_to 'Deletar', tipoatendimento, method: :delete, data: { confirm: 'tem certeza que deseja deletar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Tipoatendimento', new_tipoatendimento_path %>
+<%= link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>

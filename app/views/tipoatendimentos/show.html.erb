@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
 
 <p>
   <strong>Descricao:</strong>
   <%= @tipoatendimento.descricao %>
 </p>
 
-<%= link_to 'Edit', edit_tipoatendimento_path(@tipoatendimento) %> |
-<%= link_to 'Back', tipoatendimentos_path %>
+<%= link_to 'Editar', edit_tipoatendimento_path(@tipoatendimento) %> |
+<%= link_to 'listar tipos de atendimentos', tipoatendimentos_path %>

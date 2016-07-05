@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
 
 <p>
   <strong>Descricao:</strong>
   <%= @caracteristica.descricao %>
 </p>
 
-<%= link_to 'Edit', edit_caracteristica_path(@caracteristica) %> |
-<%= link_to 'Back', caracteristicas_path %>
+<%= link_to 'Editar', edit_caracteristica_path(@caracteristica) %> |
+<%= link_to 'Listar caracteristicas', caracteristicas_path %>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Resposta</h1>
+<h1>Respostas</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Descricao</th>
@@ -14,9 +14,9 @@
     <% @resposta.each do |respostum| %>
       <tr>
         <td><%= respostum.descricao %></td>
-        <td><%= link_to 'Show', respostum %></td>
-        <td><%= link_to 'Edit', edit_respostum_path(respostum) %></td>
-        <td><%= link_to 'Destroy', respostum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', respostum %></td>
+        <td><%= link_to 'Editar', edit_respostum_path(respostum) %></td>
+        <td><%= link_to 'Deletar', respostum, method: :delete, data: { confirm: 'Tem certeza que deseja deletar a resposta?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Respostum', new_respostum_path %>
+<%= link_to 'nova Resposa', new_respostum_path %>

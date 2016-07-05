@@ -1,6 +1,6 @@
 <%= form_for(@tipoatendimento) do |f| %>
   <% if @tipoatendimento.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation", class="alert alert-danger">
       <h2><%= pluralize(@tipoatendimento.errors.count, "error") %> prohibited this tipoatendimento from being saved:</h2>
 
       <ul>
@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :descricao %><br>
-    <%= f.text_field :descricao %>
+    <%= f.text_field :descricao, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Salvar", class: "btn btn-primary" %>
   </div>
 <% end %>

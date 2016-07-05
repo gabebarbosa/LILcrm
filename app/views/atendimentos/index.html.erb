@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Atendimentos</h1>
+<h1>Atendimentos</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
+      <th>Código</th>
       <th>Assunto</th>
       <th>Descricao</th>
       <th>Status</th>
@@ -15,12 +16,13 @@
   <tbody>
     <% @atendimentos.each do |atendimento| %>
       <tr>
+        <td><%= atendimento.id %></td>
         <td><%= atendimento.assunto %></td>
         <td><%= atendimento.descricao %></td>
         <td><%= atendimento.status %></td>
-        <td><%= link_to 'Show', atendimento %></td>
-        <td><%= link_to 'Edit', edit_atendimento_path(atendimento) %></td>
-        <td><%= link_to 'Destroy', atendimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', atendimento %></td>
+        <td><%= link_to 'Editar', edit_atendimento_path(atendimento) %></td>
+        <td><%= link_to 'Deletar', atendimento, method: :delete, data: { confirm: 'tem certeza que deseja deletar o atendimento?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Atendimento', new_atendimento_path %>
+<%= link_to 'Novo Atendimento', new_atendimento_path %>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Caracteristicas</h1>
+<h1>Caracteristicas</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Descricao</th>
@@ -14,9 +14,9 @@
     <% @caracteristicas.each do |caracteristica| %>
       <tr>
         <td><%= caracteristica.descricao %></td>
-        <td><%= link_to 'Show', caracteristica %></td>
-        <td><%= link_to 'Edit', edit_caracteristica_path(caracteristica) %></td>
-        <td><%= link_to 'Destroy', caracteristica, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'ver', caracteristica %></td>
+        <td><%= link_to 'Editar', edit_caracteristica_path(caracteristica) %></td>
+        <td><%= link_to 'Deletar', caracteristica, method: :delete, data: { confirm: 'tem certeza que deseja deletar a caracteristica?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Caracteristica', new_caracteristica_path %>
+<%= link_to 'Nova Caracteristica', new_caracteristica_path %>
