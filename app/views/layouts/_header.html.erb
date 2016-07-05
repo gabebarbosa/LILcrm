@@ -1,0 +1,12 @@
+<%= nav_bar brand: "lilCRM", brand_link: root_url do %>
+      <%= menu_group pull: :right  do %>
+          <% if logged_in? %>
+            <%= menu_item "Usuários", users_path %>
+            <%= menu_item "Conta", edit_user_path(current_user) %>
+            <%= menu_item "Sair", sign_out_path, method: "delete" %>
+          <% else %>
+            <%= menu_item "Entrar", root_path %>
+          <% end %>
+       <% end %>
+<% end %>
+
