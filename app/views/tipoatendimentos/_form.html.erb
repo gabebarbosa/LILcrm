@@ -1,0 +1,21 @@
+<%= form_for(@tipoatendimento) do |f| %>
+  <% if @tipoatendimento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipoatendimento.errors.count, "error") %> prohibited this tipoatendimento from being saved:</h2>
+
+      <ul>
+      <% @tipoatendimento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

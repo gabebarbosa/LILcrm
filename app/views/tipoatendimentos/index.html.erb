@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tipoatendimentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipoatendimentos.each do |tipoatendimento| %>
+      <tr>
+        <td><%= tipoatendimento.descricao %></td>
+        <td><%= link_to 'Show', tipoatendimento %></td>
+        <td><%= link_to 'Edit', edit_tipoatendimento_path(tipoatendimento) %></td>
+        <td><%= link_to 'Destroy', tipoatendimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipoatendimento', new_tipoatendimento_path %>

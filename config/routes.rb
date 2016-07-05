@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :tipoatendimentos
+  resources :caracteristicas
+  resources :resposta
+  resources :atendimentos
+  resources :clientes
   #get 'sessions/new'
   #get 'users/new'
   resources :users

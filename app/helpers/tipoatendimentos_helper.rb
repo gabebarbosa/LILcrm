@@ -1,0 +1,2 @@
+module TipoatendimentosHelper
+end
