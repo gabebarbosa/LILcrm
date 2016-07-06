@@ -4,6 +4,31 @@
   </div>
 <% end %>
 
+
+<h1>Atendimento: <%= @atendimento.id %></h1>
+  
+
+
+<p>
+  <strong>Data de criação:</strong>
+  <%= @atendimento.created_at %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @atendimento.cliente.nome %>
+</p>
+
+<p>
+  <strong>Tipo de atendimento:</strong>
+  <%= @atendimento.tipoatendimento.descricao %>
+</p>
+
+<p>
+  <strong>usuário:</strong>
+  <%= @atendimento.user.name %>
+</p>
+
 <p>
   <strong>Assunto:</strong>
   <%= @atendimento.assunto %>
@@ -19,5 +44,44 @@
   <%= @atendimento.status %>
 </p>
 
-<%= link_to 'Editar', edit_atendimento_path(@atendimento) %> |
+
+
+
+
+
+
+
+
+<table class="table table-bordered">
+  <tbody>
+    <% @atendimento.resposta.each do |respostum| %>
+      <tr>
+        <td>
+        	<p>
+			  <strong>Data:</strong>
+			  <%= respostum.created_at %>
+			  <strong>Usuário:</strong>
+			  <%= respostum.user.name %>
+			</p>
+			<p>
+			  <strong>Resposta:</strong>
+			  <br>
+			  <%= respostum.descricao %>
+			</p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+<%= link_to 'nova Resposa', new_respostum_path %> |
 <%= link_to 'Listar atendimentos', atendimentos_path %>

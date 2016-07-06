@@ -4,7 +4,7 @@ class RespostaController < ApplicationController
   # GET /resposta
   # GET /resposta.json
   def index
-    @resposta = Respostum.all
+    @resposta = Respostum.order("created_at DESC")
   end
 
   # GET /resposta/1
@@ -15,10 +15,14 @@ class RespostaController < ApplicationController
   # GET /resposta/new
   def new
     @respostum = Respostum.new
+    @atendimento = Atendimento.all
+    @user = User.all
   end
 
   # GET /resposta/1/edit
   def edit
+    @atendimento = Atendimento.all
+    @user = User.all
   end
 
   # POST /resposta
@@ -69,6 +73,6 @@ class RespostaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def respostum_params
-      params.require(:respostum).permit(:descricao)
+      params.require(:respostum).permit(:descricao, :atendimento_id, :user_id)
     end
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :tipoatendimentos
   resources :caracteristicas
   resources :resposta
-  resources :atendimentos
+  resources :atendimentos, :has_many => :resposta
   resources :clientes
   #get 'sessions/new'
   #get 'users/new'
@@ -13,4 +13,7 @@ Rails.application.routes.draw do
 
 
   root 'sessions#new'
+
+
+
 end
