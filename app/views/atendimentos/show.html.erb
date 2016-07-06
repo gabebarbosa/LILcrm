@@ -49,10 +49,7 @@
 
 
 
-
-
-
-<table class="table table-bordered">
+<table class="table table-bordered table-striped">
   <tbody>
     <% @atendimento.resposta.each do |respostum| %>
       <tr>
@@ -79,9 +76,7 @@
 
 
 
+<%= link_to 'Nova Resposta', new_respostum_path %> 
 
-
-
-
-<%= link_to 'nova Resposa', new_respostum_path %> |
-<%= link_to 'Listar atendimentos', atendimentos_path %>
+<br>
+<br>
