@@ -4,29 +4,36 @@ class AtendimentosController < ApplicationController
   # GET /atendimentos
   # GET /atendimentos.json
   def index
-    @atendimentos = Atendimento.all
+    @atendimentos = Atendimento.order("created_at DESC")
   end
 
   # GET /atendimentos/1
   # GET /atendimentos/1.json
   def show
+
   end
 
   # GET /atendimentos/new
   def new
     @atendimento = Atendimento.new
-    #atendimento sempre inicia com status A = Aberto
-    @atendimento.status = "A"
+    @user = User.all
+    @cliente = Cliente.all
+    @tipoatendimento = Tipoatendimento.all
   end
 
   # GET /atendimentos/1/edit
   def edit
+    @user = User.all
+    @cliente = Cliente.all
+    @tipoatendimento = Tipoatendimento.all
   end
 
   # POST /atendimentos
   # POST /atendimentos.json
   def create
     @atendimento = Atendimento.new(atendimento_params)
+    #atendimento sempre inicia com status A = Aberto
+    @atendimento.status = "A"
 
     respond_to do |format|
       if @atendimento.save
@@ -71,6 +78,6 @@ class AtendimentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atendimento_params
-      params.require(:atendimento).permit(:assunto, :descricao, :status)
+      params.require(:atendimento).permit(:assunto, :descricao, :status, :cliente_id, :tipoatendimento_id, :user_id)
     end
 end

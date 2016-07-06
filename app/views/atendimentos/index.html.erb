@@ -6,10 +6,13 @@
   <thead>
     <tr>
       <th>Código</th>
+      <th>Data de abertura</th>
+      <th>Cliente</th>
       <th>Assunto</th>
-      <th>Descricao</th>
+      <th>Usuário</th>
+      <th>Tipo de atendimento</th>
       <th>Status</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -17,11 +20,13 @@
     <% @atendimentos.each do |atendimento| %>
       <tr>
         <td><%= atendimento.id %></td>
+        <td><%= atendimento.created_at %></td>
+        <td><%= atendimento.cliente.nome %></td>
         <td><%= atendimento.assunto %></td>
-        <td><%= atendimento.descricao %></td>
+        <td><%= atendimento.user.name %></td>
+        <td><%= atendimento.tipoatendimento.descricao %></td>
         <td><%= atendimento.status %></td>
         <td><%= link_to 'Ver', atendimento %></td>
-        <td><%= link_to 'Editar', edit_atendimento_path(atendimento) %></td>
         <td><%= link_to 'Deletar', atendimento, method: :delete, data: { confirm: 'tem certeza que deseja deletar o atendimento?' } %></td>
       </tr>
     <% end %>

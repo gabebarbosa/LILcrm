@@ -10,6 +10,14 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= f.label :cliente %>
+    <%= f.collection_select :cliente_id, @cliente, :id, :nome, {}, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Tipo de atendimento" %>
+    <%= f.collection_select :tipoatendimento_id, @tipoatendimento, :id, :descricao, {}, class: "form-control" %>
+  </div>
 
   <div class="form-group">
     <%= f.label :assunto %><br>
@@ -19,6 +27,12 @@
     <%= f.label :descricao %><br>
     <%= f.text_area :descricao, class: "form-control", rows: 8 %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :usuario %>
+    <%= f.collection_select :user_id, @user, :id, :name, {}, class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= f.submit "Salvar", class: "btn btn-primary" %>
   </div>
