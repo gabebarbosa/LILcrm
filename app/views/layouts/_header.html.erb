@@ -10,6 +10,7 @@
        <% end %>
       <%= menu_group pull: :right  do %>
           <% if logged_in? %>
+            <%= menu_text current_user.email %>
             <%= menu_item "Conta", edit_user_path(current_user) %>
             <%= menu_item "Sair", sign_out_path, method: "delete" %>
           <% else %>
