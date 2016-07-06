@@ -1,11 +1,15 @@
 <%= nav_bar brand: "lilCRM", brand_link: root_url do %>
-      <%= menu_group pull: :right  do %>
+      <%= menu_group pull: :left  do %>
           <% if logged_in? %>
             <%= menu_item "Usuários", users_path %>
             <%= menu_item "clientes", clientes_path %>
             <%= menu_item "Atendimentos", atendimentos_path %>
             <%= menu_item "Catacteristicas", caracteristicas_path %>
             <%= menu_item "Tipos de atendimentos", tipoatendimentos_path %>
+          <% end %>
+       <% end %>
+      <%= menu_group pull: :right  do %>
+          <% if logged_in? %>
             <%= menu_item "Conta", edit_user_path(current_user) %>
             <%= menu_item "Sair", sign_out_path, method: "delete" %>
           <% else %>
