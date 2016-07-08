@@ -10,13 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="form-group">
-    <%= f.label :usuario %><br>
-    <%= f.text_field :user, class: "form-control" %>
+    <%= f.hidden_field :user,:value => current_user.email, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :descricao %><br>
+    <%= f.label "Novo Comentário" %><br>
     <%= f.text_area :descricao, class: "form-control", rows: 8 %>
   </div>
   

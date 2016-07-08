@@ -15,6 +15,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/new
   def new
     @comentario = Comentario.new
+    @atendimento = Atendimento.all
   end
 
   # GET /comentarios/1/edit

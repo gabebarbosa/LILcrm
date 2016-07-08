@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :comentarios
   resources :tipoatendimentos
   resources :caracteristicas
-  resources :resposta
   resources :atendimentos, :has_many => :resposta
 
 

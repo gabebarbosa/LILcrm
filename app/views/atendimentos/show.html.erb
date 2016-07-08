@@ -45,14 +45,30 @@
 </p>
 
 
-<h3>Comentários</h3>
-<% @atendimento.comentarios.each do |comentario| %>
-  <div>
-    <strong><%= comentario.user %></strong>
-    <br />
-    <p><%= comentario.descricao %><p>
-  </div>
-<% end %>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Comentários</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atendimento.comentarios.each do |comentario| %>
+      <tr>
+        <td>
+        	<%= comentario.created_at %>
+        	<br>
+        	<strong><%= comentario.user %></strong>
+        	<br>
+        	<%= comentario.descricao %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 <%= render 'comentarios/form' %>
 
 <br>
