@@ -15,21 +15,19 @@ class ComentariosController < ApplicationController
   # GET /comentarios/new
   def new
     @comentario = Comentario.new
-    @atendimento = Atendimento.all
   end
 
   # GET /comentarios/1/edit
   def edit
   end
 
-  # POST /comentarios
-  # POST /comentarios.json
+  #POST /comentarios
+  #POST /comentarios.json
   def create
     @comentario = Comentario.new(comentario_params)
-
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
+        format.html { redirect_to atendimento_url(@comentario.atendimento_id), notice: 'Comentario adicionado!' }
         format.json { render :show, status: :created, location: @comentario }
       else
         format.html { render :new }
@@ -37,6 +35,9 @@ class ComentariosController < ApplicationController
       end
     end
   end
+
+
+
 
   # PATCH/PUT /comentarios/1
   # PATCH/PUT /comentarios/1.json
