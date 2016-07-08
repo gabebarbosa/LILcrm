@@ -8,11 +8,10 @@
       <th>Código</th>
       <th>Data de abertura</th>
       <th>Cliente</th>
-      <th>Assunto</th>
       <th>Usuário</th>
       <th>Tipo de atendimento</th>
       <th>Status</th>
-      <th colspan="2"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,12 +21,10 @@
         <td><%= atendimento.id %></td>
         <td><%= atendimento.created_at %></td>
         <td><%= atendimento.cliente.nome %></td>
-        <td><%= atendimento.assunto %></td>
-        <td><%= atendimento.user.name %></td>
+        <td><%= atendimento.user.email %></td>
         <td><%= atendimento.tipoatendimento.descricao %></td>
         <td><%= atendimento.status %></td>
         <td><%= link_to 'Ver', atendimento %></td>
-        <td><%= link_to 'Deletar', atendimento, method: :delete, data: { confirm: 'tem certeza que deseja deletar o atendimento?' } %></td>
       </tr>
     <% end %>
   </tbody>

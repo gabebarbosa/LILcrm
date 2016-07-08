@@ -1,4 +1,5 @@
 class AtendimentosController < ApplicationController
+  
   before_action :set_atendimento, only: [:show, :edit, :update, :destroy]
 
   # GET /atendimentos
