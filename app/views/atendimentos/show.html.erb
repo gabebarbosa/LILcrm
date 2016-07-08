@@ -45,38 +45,15 @@
 </p>
 
 
-
-
-
-
-<table class="table table-bordered table-striped">
-  <tbody>
-    <% @atendimento.resposta.each do |respostum| %>
-      <tr>
-        <td>
-        	<p>
-			  <strong>Data:</strong>
-			  <%= respostum.created_at %>
-			  <strong>Usuário:</strong>
-			  <%= respostum.user.name %>
-			</p>
-			<p>
-			  <strong>Resposta:</strong>
-			  <br>
-			  <%= respostum.descricao %>
-			</p>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-
-
-
-
-<%= link_to 'Nova Resposta', new_respostum_path %> 
+<h3>Comentários</h3>
+<% @atendimento.comentarios.each do |comentario| %>
+  <div>
+    <strong><%= comentario.user %></strong>
+    <br />
+    <p><%= comentario.descricao %><p>
+  </div>
+<% end %>
+<%= render 'comentarios/form' %>
 
 <br>
 <br>

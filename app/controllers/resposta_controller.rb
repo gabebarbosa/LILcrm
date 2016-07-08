@@ -28,7 +28,7 @@ class RespostaController < ApplicationController
   # POST /resposta
   # POST /resposta.json
   def create
-    @respostum = Respostum.new(respostum_params)
+      @respostum = Respostum.new(respostum_params)
 
     respond_to do |format|
       if @respostum.save
