@@ -11,7 +11,7 @@
 
 <p>
   <strong>Data de criação:</strong>
-  <%= @atendimento.created_at %>
+  <%= post_date @atendimento.created_at %>
 </p>
 
 <p>
@@ -56,7 +56,7 @@
     <% @atendimento.comentarios.each do |comentario| %>
       <tr>
         <td>
-        	<%= comentario.created_at %>
+        	<%=  comentario.created_at %>
         	<br>
         	<strong><%= comentario.user %></strong>
         	<br>

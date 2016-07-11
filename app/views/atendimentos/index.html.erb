@@ -10,6 +10,7 @@
       <th>Cliente</th>
       <th>Usuário</th>
       <th>Tipo de atendimento</th>
+      <th>Assunto</th>
       <th>Status</th>
       <th></th>
     </tr>
@@ -19,10 +20,11 @@
     <% @atendimentos.each do |atendimento| %>
       <tr>
         <td><%= atendimento.id %></td>
-        <td><%= atendimento.created_at %></td>
+        <td><%= post_date atendimento.created_at %></td>
         <td><%= atendimento.cliente.nome %></td>
         <td><%= atendimento.user.email %></td>
         <td><%= atendimento.tipoatendimento.descricao %></td>
+        <td><%= atendimento.assunto %></td>
         <td><%= atendimento.status %></td>
         <td><%= link_to 'Ver', atendimento %></td>
       </tr>
@@ -32,4 +34,4 @@
 
 <br>
 
-<%= link_to 'Novo Atendimento', new_atendimento_path %>
+<%= link_to 'Novo Atendimento', new_atendimento_path %>  

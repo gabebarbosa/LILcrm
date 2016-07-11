@@ -28,9 +28,9 @@
     <%= f.text_area :descricao, class: "form-control", rows: 8 %>
   </div>
 
-  <div class="form-group">
+ <div class="form-group">
     <%= f.label :usuario %>
-    <%= f.collection_select :user_id, @user, :id, :name, {}, class: "form-control" %>
+    <%= f.collection_select :user_id, @user, :id, :email, {}, class: "form-control" %>
   </div>
 
   <div class="form-group">

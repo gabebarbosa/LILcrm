@@ -1,28 +1,20 @@
 class CaracteristicasController < ApplicationController
   before_action :set_caracteristica, only: [:show, :edit, :update, :destroy]
 
-  # GET /caracteristicas
-  # GET /caracteristicas.json
   def index
     @caracteristicas = Caracteristica.all
   end
 
-  # GET /caracteristicas/1
-  # GET /caracteristicas/1.json
   def show
   end
 
-  # GET /caracteristicas/new
   def new
     @caracteristica = Caracteristica.new
   end
 
-  # GET /caracteristicas/1/edit
   def edit
   end
 
-  # POST /caracteristicas
-  # POST /caracteristicas.json
   def create
     @caracteristica = Caracteristica.new(caracteristica_params)
 
@@ -37,8 +29,6 @@ class CaracteristicasController < ApplicationController
     end
   end
 
-  # PATCH/PUT /caracteristicas/1
-  # PATCH/PUT /caracteristicas/1.json
   def update
     respond_to do |format|
       if @caracteristica.update(caracteristica_params)
@@ -51,8 +41,6 @@ class CaracteristicasController < ApplicationController
     end
   end
 
-  # DELETE /caracteristicas/1
-  # DELETE /caracteristicas/1.json
   def destroy
     @caracteristica.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class CaracteristicasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_caracteristica
       @caracteristica = Caracteristica.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def caracteristica_params
       params.require(:caracteristica).permit(:descricao)
     end

@@ -1,4 +1,3 @@
 class Cliente < ActiveRecord::Base
-	has_many :atendimentos
-	
+	has_many :atendimentos	
 end
