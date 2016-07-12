@@ -1,6 +1,6 @@
 class AtendimentosController < ApplicationController
   
-  before_action :set_atendimento, only: [:show, :edit, :update, :destroy]
+  before_action :set_atendimento, only: [:show]
 
   def index
     @atendimentos = Atendimento.order("created_at DESC")
@@ -30,7 +30,7 @@ class AtendimentosController < ApplicationController
 
     respond_to do |format|
       if @atendimento.save
-        format.html { redirect_to @atendimento, notice: 'Atendimento was successfully created.' }
+        format.html { redirect_to @atendimento, notice: 'Atendimento criado com sucesso.' }
         format.json { render :show, status: :created, location: @atendimento }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AtendimentosController < ApplicationController
   def update
     respond_to do |format|
       if @atendimento.update(atendimento_params)
-        format.html { redirect_to @atendimento, notice: 'Atendimento was successfully updated.' }
+        format.html { redirect_to @atendimento, notice: 'Atendimento alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @atendimento }
       else
         format.html { render :edit }
@@ -54,7 +54,7 @@ class AtendimentosController < ApplicationController
   def destroy
     @atendimento.destroy
     respond_to do |format|
-      format.html { redirect_to atendimentos_url, notice: 'Atendimento was successfully destroyed.' }
+      format.html { redirect_to atendimentos_url, notice: 'Atendimento deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
