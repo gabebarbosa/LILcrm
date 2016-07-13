@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Clientes</h1>
+<h3>Clientes</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -29,6 +29,13 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'Novo Cliente', new_cliente_path %>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= button_to "Novo Cliente", new_cliente_path, :method => "get", class: "btn btn-primary" %>
+    <% link_to 'Novo Cliente', new_cliente_path %>
+  </div>
+</div>

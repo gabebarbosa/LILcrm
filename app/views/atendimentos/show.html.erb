@@ -5,44 +5,47 @@
 <% end %>
 
 
-<h1>Atendimento: <%= @atendimento.id %></h1>
+<h3>Atendimento: <%= @atendimento.id %></h3>
   
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>
+      <strong>Data de criação:</strong>
+      <%= post_date @atendimento.created_at %>
+    </p>
 
+    <p>
+      <strong>Cliente:</strong>
+      <%= @atendimento.cliente.nome %>
+    </p>
 
-<p>
-  <strong>Data de criação:</strong>
-  <%= post_date @atendimento.created_at %>
-</p>
+    <p>
+      <strong>Tipo de atendimento:</strong>
+      <%= @atendimento.tipoatendimento.descricao %>
+    </p>
 
-<p>
-  <strong>Cliente:</strong>
-  <%= @atendimento.cliente.nome %>
-</p>
+    <p>
+      <strong>usuário:</strong>
+      <%= @atendimento.user.email %>
+    </p>
 
-<p>
-  <strong>Tipo de atendimento:</strong>
-  <%= @atendimento.tipoatendimento.descricao %>
-</p>
+    <p>
+      <strong>Assunto:</strong>
+      <%= @atendimento.assunto %>
+    </p>
 
-<p>
-  <strong>usuário:</strong>
-  <%= @atendimento.user.email %>
-</p>
+    <p>
+      <strong>Descricao:</strong>
+      <%= @atendimento.descricao %>
+    </p>
 
-<p>
-  <strong>Assunto:</strong>
-  <%= @atendimento.assunto %>
-</p>
+    <p>
+      <strong>Status:</strong>
+      <%= @atendimento.status %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Descricao:</strong>
-  <%= @atendimento.descricao %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @atendimento.status %>
-</p>
 
 
 <table class="table table-bordered table-striped">

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Caracteristicas</h1>
+<h3>Caracteristicas</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -21,6 +21,11 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'Nova Caracteristica', new_caracteristica_path %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= button_to "Nova Caracteristica", new_caracteristica_path, :method => "get", class: "btn btn-primary" %>
+    <% link_to 'Nova Caracteristica', new_caracteristica_path %>
+  </div>
+</div>

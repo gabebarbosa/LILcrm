@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tipos de atendimentos</h1>
+<h3>Tipos de atendimentos</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -21,6 +21,11 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= button_to "Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: "btn btn-primary" %>
+    <% link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>
+  </div>
+</div>
