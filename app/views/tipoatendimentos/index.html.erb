@@ -2,6 +2,14 @@
 
 <h3>Tipos de atendimentos</h3>
 
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= button_to "Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: "btn btn-primary" %>
+    <% link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>
+  </div>
+</div>
+
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -23,9 +31,3 @@
 
 
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <%= button_to "Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: "btn btn-primary" %>
-    <% link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>
-  </div>
-</div>

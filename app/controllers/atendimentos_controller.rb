@@ -1,9 +1,9 @@
 class AtendimentosController < ApplicationController
   
-  before_action :set_atendimento, only: [:show]
+  before_action :set_atendimento, only: [:show, :edit, :update]
 
   def index
-    @atendimentos = Atendimento.order("created_at DESC")
+    @atendimentos = Atendimento.includes(:cliente, :user, :tipoatendimento ).order("created_at DESC")
   end
 
   def show
@@ -58,6 +58,7 @@ class AtendimentosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     def set_atendimento

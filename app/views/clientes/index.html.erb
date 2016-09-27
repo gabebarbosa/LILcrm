@@ -2,6 +2,14 @@
 
 <h3>Clientes</h3>
 
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= button_to "Novo Cliente", new_cliente_path, :method => "get", class: "btn btn-primary" %>
+    <% link_to 'Novo Cliente', new_cliente_path %>
+  </div>
+</div>
+
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -33,9 +41,4 @@
 
 
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <%= button_to "Novo Cliente", new_cliente_path, :method => "get", class: "btn btn-primary" %>
-    <% link_to 'Novo Cliente', new_cliente_path %>
-  </div>
-</div>
+

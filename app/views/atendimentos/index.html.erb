@@ -2,6 +2,21 @@
 
 <h3>Atendimentos</h3>
 
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= button_to "Novo Atendimento", new_atendimento_path, :method => "get", class: "btn btn-primary" %>
+    <% link_to 'Novo Atendimento', new_atendimento_path, class: "btn btn-primary" %> 
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -33,8 +48,3 @@
 </table>
 
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <%= button_to "Novo Atendimento", new_atendimento_path, :method => "get", class: "btn btn-primary" %>
-    <% link_to 'Novo Atendimento', new_atendimento_path, class: "btn btn-primary" %> 
-</div>
