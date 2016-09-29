@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20160708124039) do
     t.datetime "updated_at"
   end
 
-  create_table "resposta", force: :cascade do |t|
-    t.text     "descricao"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "atendimento_id"
-    t.integer  "user_id"
-  end
-
   create_table "tipoatendimentos", force: :cascade do |t|
     t.string   "descricao"
     t.datetime "created_at", null: false
