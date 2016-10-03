@@ -28,16 +28,26 @@
 
 <div class="row">
     <% @atendimentos.each do |atendimento| %>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <span class="label label-info">Nº <%= atendimento.id %></span>
-          <b>Cliente:</b> <%= atendimento.cliente.nome %>
+          <%= atendimento.assunto %>
         </div>
         <div class="panel-body"> 
-          <p><b>Assunto:</b> <%= atendimento.assunto %><br>   
-          <b>Usuário:</b> <%= atendimento.user.email %><br> 
-          <b>Criado em:</b> <%= post_date atendimento.created_at %></p> 
+          <table class="table table-condensed">
+            <tbody>
+              <tr>
+                <td class=" small"><b>Cliente:</b> <%= atendimento.cliente.nome %></td>
+              </tr>
+              <tr>
+                <td class=" small"><b>Criado em:</b> <%= post_date atendimento.created_at %></td>
+              </tr>
+              <tr>
+                <td class=" small"><b>Usuário:</b> <%= atendimento.user.email %></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div align="center" class="panel-footer">
           <%= link_to 'Ver Atendimento', atendimento, class: "btn btn-default btn-xs" %>

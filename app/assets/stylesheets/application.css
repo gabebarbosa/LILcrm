@@ -40,6 +40,7 @@ h1,h3{
 /* link */
 .navbar-default .navbar-nav > li > a {
     color: white;
+    transition: 0.3s ease;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
