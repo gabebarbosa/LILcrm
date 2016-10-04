@@ -57,5 +57,5 @@ gem 'bootstrap-sass'
 gem "twitter-bootstrap-rails"
 gem 'rails-i18n', '~> 4.0.0'
 gem 'foreigner'
-gem 'thin'
+
 
