@@ -6,7 +6,6 @@ class CreateComentarios < ActiveRecord::Migration
       t.integer :atendimento_id
 
       t.timestamps 
-      add_foreign_key :comments, :ideas
     end
   end
 end
