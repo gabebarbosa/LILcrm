@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ = require font-awesome
  */
 h1,h3{
 	color: white;

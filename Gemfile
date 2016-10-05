@@ -54,8 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bcrypt'
 gem 'coffee-script-source', '1.8.0'
 gem 'bootstrap-sass'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'foreigner'
 
-
+gem 'font-awesome-rails'
