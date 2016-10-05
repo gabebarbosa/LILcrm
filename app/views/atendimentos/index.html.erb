@@ -92,7 +92,7 @@
                   <% atendimento.comentarios.each do |comentario| %>
                     <tr>
                       <td>
-                        <%=  comentario.created_at %>
+                        <%= post_date comentario.created_at %>
                         <br>
                         <strong><%= comentario.user %></strong>
                         <br>
