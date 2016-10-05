@@ -35,7 +35,6 @@
             <li class="list-group-item"><%= atendimento.assunto %></li>
             <li class="list-group-item"><%= atendimento.cliente.nome %></li>
             <li class="list-group-item">
-              <% link_to 'Ver Atendimento', atendimento, class: "btn btn-primary btn-xs" %>
               <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target= <%= "#" + atendimento.id.to_s %> ><i class="fa fa-eye" aria-hidden="true"></i></button>
               <i class="fa fa-comments" aria-hidden="true"></i><%= atendimento.comentarios.count %>
             </li>
@@ -86,6 +85,9 @@
                   <tr>
                     <th><i class="fa fa-comments" aria-hidden="true"></i> Comentários</th>
                   </tr>
+                  <tr>
+                    <th><%= link_to 'Adicionar comentário', atendimento, class: "btn btn-default btn-xs" %></th>
+                  </tr>
                 </thead>
 
                 <tbody>
@@ -102,7 +104,6 @@
                   <% end %>
                 </tbody>
               </table>
-
 
 
 
