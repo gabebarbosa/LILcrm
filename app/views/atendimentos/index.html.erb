@@ -44,12 +44,10 @@
 
     <div id=<%= atendimento.id.to_s %> class="modal fade" role="dialog">
       <div class="modal-dialog">
-
-
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><i class="fa fa-eye" aria-hidden="true"></i> Atendimento Nº <%= atendimento.id %></h4>
+            <h4 align="center" class="modal-title"><i class="fa fa-eye" aria-hidden="true"></i> Atendimento Nº <%= atendimento.id %></h4>
           </div>
           <div class="modal-body">
             <div class="panel panel-default">
@@ -58,32 +56,26 @@
                   <strong>Data de criação:</strong>
                   <%= post_date atendimento.created_at %>
                 </p>
-
                 <p>
                   <strong>Cliente:</strong>
                   <%= atendimento.cliente.nome %>
                 </p>
-
                 <p>
                   <strong>Tipo de atendimento:</strong>
                   <%= atendimento.tipoatendimento.descricao %>
                 </p>
-
                 <p>
                   <strong>usuário:</strong>
                   <%= atendimento.user.email %>
                 </p>
-
                 <p>
                   <strong>Assunto:</strong>
                   <%= atendimento.assunto %>
                 </p>
-
                 <p>
                   <strong>Descricao:</strong>
                   <%= atendimento.descricao %>
                 </p>
-
                 <p>
                   <strong>Status:</strong>
                   <%= atendimento.status %>
