@@ -3,23 +3,8 @@
 <div class="panel panel-default">
   <div class="panel-body">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
       <%= button_to "Novo Atendimento", new_atendimento_path, :method => "get", class: "btn btn-primary btn-xs " %> 
-    </div>
-    <div class="col-md-2">
-      <p></p>  
-    </div>
-    <div class="col-md-2">
-      <p></p>  
-    </div>
-    <div class="col-md-2">
-      <p></p>  
-    </div>
-    <div class="col-md-2">
-      <p></p>  
-    </div>
-    <div class="col-md-2">
-      <p></p>  
     </div>
   </div>   
 
@@ -30,16 +15,20 @@
     <% @atendimentos.each do |atendimento| %>
     <div class="col-md-3">
           <ul class="small list-group">
-            <li class="list-group-item"><span class="label label-info">Nº <%= atendimento.id %></span>
-          <%= atendimento.tipoatendimento.descricao %></li>
+            <li class="list-group-item">
+              <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-unlock" aria-hidden="true"></i> Nº <%= atendimento.id %></span>
+              <%= atendimento.tipoatendimento.descricao %>
+            </li>
             <li class="list-group-item"><%= atendimento.assunto %></li>
             <li class="list-group-item"><%= atendimento.cliente.nome %></li>
             <li class="list-group-item">
               <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target= <%= "#" + atendimento.id.to_s %> ><i class="fa fa-eye" aria-hidden="true"></i></button>
-              <i class="fa fa-comments" aria-hidden="true"></i><%= atendimento.comentarios.count %>
+              <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
             </li>
           </ul>
     </div>
+
+
 
     <div id=<%= atendimento.id.to_s %> class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -52,35 +41,20 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <p>
-                  <strong>Data de criação:</strong>
-                  <%= post_date atendimento.created_at %>
+                  <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+                  <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-calendar" aria-hidden="true"></i> aberto em <%= post_date atendimento.created_at %></span>
                 </p>
-                <p>
-                  <strong>Cliente:</strong>
-                  <%= atendimento.cliente.nome %>
-                </p>
-                <p>
-                  <strong>Tipo de atendimento:</strong>
-                  <%= atendimento.tipoatendimento.descricao %>
-                </p>
-                <p>
-                  <strong>usuário:</strong>
-                  <%= atendimento.user.email %>
-                </p>
-                <p>
-                  <strong>Assunto:</strong>
-                  <%= atendimento.assunto %>
-                </p>
-                <p>
-                  <strong>Descricao:</strong>
-                  <%= atendimento.descricao %>
-                </p>
-                <p>
-                  <strong>Status:</strong>
-                  <%= atendimento.status %>
-                </p>
+                <p><i class="fa fa-user" aria-hidden="true"></i> <%= atendimento.user.email %></p>
+                <p><strong>Cliente:</strong><%= atendimento.cliente.nome %></p>
+                <p><strong>Tipo de atendimento:</strong><%= atendimento.tipoatendimento.descricao %></p>
+                <p><strong>Assunto:</strong><%= atendimento.assunto %></p>
+                <p><strong>Descricao:</strong><%= atendimento.descricao %></p>
               </div>
-              <table class="table table-bordered table-striped">
+            </div>
+
+
+            <div class="panel panel-default">
+              <table class="table table-condensed">
                 <thead>
                   <tr>
                     <th><i class="fa fa-comments" aria-hidden="true"></i> Comentários</th>
@@ -92,22 +66,25 @@
 
                 <tbody>
                   <% atendimento.comentarios.each do |comentario| %>
+                    <tr class="info">
+                      <td class="small">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <%= post_date comentario.created_at %> 
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <strong>  <%= comentario.user %></strong>                    
+                      </td>
+                    </tr>
                     <tr>
                       <td>
-                        <%= post_date comentario.created_at %>
-                        <br>
-                        <strong><%= comentario.user %></strong>
-                        <br>
                         <%= comentario.descricao %>
                       </td>
                     </tr>
                   <% end %>
                 </tbody>
               </table>
-
-
-
             </div>
+
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
