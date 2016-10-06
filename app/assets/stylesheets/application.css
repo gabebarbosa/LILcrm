@@ -54,3 +54,30 @@ h1,h3{
     background-color: white;
 }
 
+.balao {
+    background:#337ab7;
+    padding:10px;
+    color:#fff;
+    display:inline-block;
+    position:relative;
+    border-radius: 10px;
+}
+.balao:before {
+    content:'';
+    position:absolute;
+    left:-15px;
+    top:0;
+    border-bottom: 15px solid transparent;
+    border-right:25px solid #337ab7;
+}
+
+
+
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}

@@ -19,8 +19,7 @@
               <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-unlock" aria-hidden="true"></i> Nº <%= atendimento.id %></span>
               <%= atendimento.tipoatendimento.descricao %>
             </li>
-            <li class="list-group-item"><%= atendimento.assunto %></li>
-            <li class="list-group-item"><%= atendimento.cliente.nome %></li>
+            <li class="list-group-item"><%= atendimento.assunto %> <br><%= atendimento.cliente.nome %></li>
             <li class="list-group-item">
               <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target= <%= "#" + atendimento.id.to_s %> ><i class="fa fa-eye" aria-hidden="true"></i></button>
               <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
@@ -66,17 +65,27 @@
 
                 <tbody>
                   <% atendimento.comentarios.each do |comentario| %>
-                    <tr class="info">
-                      <td class="small">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <%= post_date comentario.created_at %> 
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <strong>  <%= comentario.user %></strong>                    
-                      </td>
-                    </tr>
                     <tr>
-                      <td>
-                        <%= comentario.descricao %>
+                      <td class="small">
+                        <div class="row">
+                          <div class="col-md-6">
+                          <p>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <strong>  <%= comentario.user %></strong> 
+                          </p>
+                             
+                          </div>
+                          <div align="right" class="col-md-6">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <%= post_date comentario.created_at %> 
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                            <%= comentario.descricao %>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   <% end %>
