@@ -26,8 +26,9 @@ h1,h3{
 
 /* navbar */
 .navbar-default {
-    background-color: #337ab7;
-    border-color: white;
+    background-color: #7B289C;/*#337ab7  */
+    border-color: #FAFAFA;
+
 
 }
 /* title */
@@ -45,13 +46,13 @@ h1,h3{
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #B2DFEE;
+    color: #D492EE; /* B2DFEE */
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #337ab7;
-    background-color: white;
+    color: #7B289C;
+    background-color: #FAFAFA;
 }
 
 .balao {
@@ -72,12 +73,34 @@ h1,h3{
 }
 
 
-
-
 .modal-dialog{
     overflow-y: initial !important
 }
 .modal-body{
     max-height: calc(100vh - 200px);
     overflow-y: auto;
+}
+
+
+body {
+    background-color: #FAFAFA;
+}
+
+.btn{
+    border-radius: 10px;
+}
+
+.btn-default{
+    color: #7B289C;
+    border-color: #7B289C;
+}
+
+
+.btn-default:hover{
+    color: #7B289C;
+    border-color: #7B289C;
+}
+
+.label-tema{
+    color: #7B289C;
 }
