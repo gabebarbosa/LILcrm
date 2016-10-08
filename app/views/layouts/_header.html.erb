@@ -10,7 +10,7 @@
       <%= menu_group pull: :right  do %>
           <% if logged_in? %>
             <%= menu_item " "+current_user.email, edit_user_path(current_user), class: 'fa fa-user' %>
-            <%= menu_item " Sair", sign_out_path, method: "delete", class: 'fa fa-times' %>
+            <%= menu_item " Sair", sign_out_path, method: "delete", class: 'fa fa-times-circle' %>
           <% else %>
             <%= menu_item "Entrar", root_path %>
           <% end %>

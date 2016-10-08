@@ -1,24 +1,46 @@
 <div class="row">
-  <div class="col-md-8">
-    
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3>lilCRM</h3>
+        <p align="center"><strong>lilCRM é um projeto de CRM simples em estado inicial.</strong></p><hr>
+        <p><strong>Objetivo: </strong>Um controle simples do relacionamento da empresa com sus clientes por meio de atendimentos </p><hr>
+        <p>Funcionalidades sendo implementadas no status atual do projeto:</p>
+        <ul>
+          <li><i class="fa fa-book" aria-hidden="true"></i> Atendimentos</li>
+          <li><i class="fa fa-users" aria-hidden="true"></i> Clientes</li>
+          <li><i class="fa fa-tags" aria-hidden="true"></i> Caracterirsticas de clientes</li>
+          <li><i class="fa fa-bookmark" aria-hidden="true"></i> Tipos de atendimentos</li>
+          <li><i class="fa fa-user" aria-hidden="true"></i> Usuários</li>
+        </ul>
+        <hr>
+        <p>Funcionalidades Futuras:</p>
+        <ul>
+          <li><i class="fa fa-sitemap" aria-hidden="true"></i> Ciclos de atendimentos</li>
+          <li><i class="fa fa-bar-chart" aria-hidden="true"></i> Relatórios</li>
+          <li><i class="fa fa-filter" aria-hidden="true"></i> Filtros</li>
+          <li><i class="fa fa-calendar" aria-hidden="true"></i> Agenda</li>
+        </ul>
+      </div>
+    </div>
   </div>
-    <div class="col-md-4">
+    <div class="small col-md-3">
       <div class="panel panel-default">
         <div class="panel-body">
         <%= form_for :session, url: sign_in_path do |f| %>
           <div class="form-group">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+            <%= f.email_field :email, autofocus: true, class: "input-sm form-control" %>
           </div>
          
           <div class="form-group">
             <%= f.label :senha %><br />
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+            <%= f.password_field :password, autocomplete: "off", class: "input-sm form-control" %>
           </div>
           <div class="form-group">
-            <%= f.submit "Entrar", class: "btn btn-default" %>
+            <%= f.submit "Entrar", class: "btn btn-default btn-xs" %>
           </div>
-        <p>Não possui cadastro? <%= link_to "Cadastre-se agora!", new_user_path %></p>
+        <p><%= link_to "Cadastre-se aqui!", new_user_path %></p>
         <% end %>    
         </div>
   </div>
