@@ -16,7 +16,7 @@
  */
 
 :root{
-    --color-tema: #464655;/*Primeira opção: #7B289C, Ficou bom: #464655,  */
+    --color-tema: #545775;/*Primeira opção: #7B289C, Ficou bom: #464655, Ficou ótimo: #545775, Fivou melhor #3D7068 */
 }
 
 
@@ -26,7 +26,7 @@ h1,h3{
 	background-color: var(--color-tema);
 	text-align: center;
     font-weight: bold;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border-radius: 50px;
 }
 
