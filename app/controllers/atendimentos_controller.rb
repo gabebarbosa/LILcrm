@@ -7,6 +7,8 @@ class AtendimentosController < ApplicationController
     @atendimentos = Atendimento.order("created_at DESC").where "status like 'A' "
   end
 
+
+
   def show
 
   end
@@ -59,7 +61,12 @@ class AtendimentosController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+#implementar encerrar atendimento
+  def encerrar
+    @atendimento = Atendimento.find(params[:id])
+    @atendimento.status = "F"
+    redirect_to atendimentos_url, notice: 'Atendimento Finalizado com sucesso.'
+  end
 
   private
     def set_atendimento
