@@ -9,7 +9,40 @@
 <body>
   	 <%= render 'layouts/header' %>
 	 <div class="container">
+	 <% if logged_in? %>
 	  <%= yield %>
+	 <%else %>
+		<div class="row">
+		  <div class="col-md-12">
+		    <div class="panel panel-default">
+		      <div class="panel-body">
+		        <h3>lilCRM</h3>
+		        <p align="center"><strong>lilCRM é um projeto de CRM simples em estado inicial. <a target="blank" href="https://github.com/gabebarbosa/lilcrm"><i class="fa fa-github" aria-hidden="true"></i></a></strong></p><hr>
+		        <p><strong>Objetivo: </strong>Um controle simples do relacionamento da empresa com seus clientes por meio de atendimentos  </p><hr>
+		        <p>Funcionalidades sendo implementadas no status atual do projeto:</p>
+		        <ul>
+		          <li><i class="fa fa-book label-tema" aria-hidden="true"></i> Atendimentos</li>
+		          <li><i class="fa fa-comments label-tema" aria-hidden="true"></i> Comentários em atendimentos</li>
+		          <li><i class="fa fa-bookmark label-tema" aria-hidden="true"></i> Tipos de atendimentos</li>
+		          <li><i class="fa fa-users label-tema" aria-hidden="true"></i> Clientes</li>
+		          <li><i class="fa fa-tags label-tema" aria-hidden="true"></i> Caracterirsticas de clientes</li>
+		          <li><i class="fa fa-user label-tema" aria-hidden="true"></i> Usuários</li>
+		        </ul>
+		        <hr>
+		        <p>Funcionalidades Futuras:</p>
+		        <ul>
+		          <li><i class="fa fa-sitemap label-tema" aria-hidden="true"></i> Ciclos de atendimentos</li>
+		          <li><i class="fa fa-bar-chart label-tema" aria-hidden="true"></i> Relatórios</li>
+		          <li><i class="fa fa-filter label-tema" aria-hidden="true"></i> Filtros</li>
+		          <li><i class="fa fa-calendar label-tema" aria-hidden="true"></i> Agenda</li>
+		          <li><i class="fa fa-money label-tema" aria-hidden="true"></i> Finanças</li>
+		        </ul>
+		        <p><%= link_to "Cadastre-se aqui!", new_user_path %></p>
+		      </div>
+		    </div>
+		  </div>
+		</div> 
+	 <% end %>
 	 <div/>
 
 
