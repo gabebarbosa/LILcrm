@@ -4,7 +4,8 @@
   <div class="panel-body">
   <div class="row">
     <div class="col-md-3">
-      <%= button_to "Novo Atendimento", new_atendimento_path, :method => "get", class: "btn btn-default btn-xs " %> 
+      <% button_to "Novo Atendimento", new_atendimento_path, :method => "get", class: "btn btn-default btn-xs" %> 
+      <%= link_to " Novo Atendimento", new_atendimento_path, :method => "get", class: " fa fa-plus-circle btn btn-default btn-xs" %> 
     </div>
   </div>   
 
@@ -17,9 +18,14 @@
           <ul class="small list-group">
             <li class="list-group-item">
               <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-unlock" aria-hidden="true"></i> Nº <%= atendimento.id %></span>
-              <%= atendimento.tipoatendimento.descricao %>
+              <i class="fa fa-calendar label-tema" aria-hidden="true"></i>
+              <%= post_date atendimento.created_at %>
             </li>
-            <li class="list-group-item"><%= atendimento.assunto %> <br><%= atendimento.cliente.nome %></li>
+            <li class="list-group-item">
+              <i class="fa fa-bookmark label-tema" aria-hidden="true"></i><%= " "+atendimento.tipoatendimento.descricao %> <br>
+              <%= " "+atendimento.cliente.nome %> <br>
+              <%= atendimento.assunto %>
+            </li>
             <li class="list-group-item">
               <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target= <%= "#" + atendimento.id.to_s %> ><i class="fa fa-eye" aria-hidden="true"></i></button>
               <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
@@ -28,7 +34,7 @@
     </div>
 
 
-
+    <!-- Modal Atendimento -->
     <div id=<%= atendimento.id.to_s %> class="modal fade" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -43,9 +49,9 @@
                   <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-unlock" aria-hidden="true"></i></span>
                   <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-calendar" aria-hidden="true"></i> aberto em <%= post_date atendimento.created_at %></span>
                 </p>
+                <p><i class="fa fa-bookmark label-tema" aria-hidden="true"></i><%= " "+ atendimento.tipoatendimento.descricao %></p>
                 <p><i class="fa fa-user label-tema " aria-hidden="true"></i> <%= atendimento.user.email %></p>
                 <p><strong>Cliente:</strong><%= atendimento.cliente.nome %></p>
-                <p><strong>Tipo de atendimento:</strong><%= atendimento.tipoatendimento.descricao %></p>
                 <p><strong>Assunto:</strong><%= atendimento.assunto %></p>
                 <p><strong>Descricao:</strong><%= atendimento.descricao %></p>
               </div>
@@ -101,6 +107,8 @@
         </div>
       </div>
     </div>
+
+
 
     <% end %>
 </div>
