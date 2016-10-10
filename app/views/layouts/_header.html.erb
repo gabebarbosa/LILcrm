@@ -12,8 +12,45 @@
             <%= menu_item " "+current_user.email, edit_user_path(current_user), class: 'fa fa-user' %>
             <%= menu_item " Sair", sign_out_path, method: "delete", class: 'fa fa-times-circle' %>
           <% else %>
-            <%= menu_item "Entrar", root_path %>
+            <% menu_item "Entrar", root_path, class: 'fa fa-power-off' %>
+            <li class="active">
+              <a href="" data-toggle="modal" data-target="#loginModal" class="fa fa-power-off"> Entrar</a>
+            </li>
           <% end %>
        <% end %>
 <% end %>
 
+
+
+
+<!-- Modal Login -->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for :session, url: sign_in_path do |f| %>
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: "input-sm form-control" %>
+          </div>
+         
+          <div class="form-group">
+            <%= f.label :senha %><br />
+            <%= f.password_field :password, autocomplete: "off", class: "input-sm form-control" %>
+          </div>           
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Entrar", class: "btn btn-default btn-xs" %>
+        <% end %> 
+        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Sair</button>
+      </div>
+    </div>
+
+  </div>
+</div>
