@@ -3,8 +3,9 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <%= button_to "Nova Caracteristica", new_caracteristica_path, :method => "get", class: "btn btn-default btn-xs" %>
+    <% button_to "Nova Caracteristica", new_caracteristica_path, :method => "get", class: "btn btn-default btn-xs" %>
     <% link_to 'Nova Caracteristica', new_caracteristica_path %>
+    <%= link_to " Nova Caracteristica", new_caracteristica_path, :method => "get", class: " fa fa-plus-circle btn btn-default btn-xs"%> 
   </div>
 </div>
 
