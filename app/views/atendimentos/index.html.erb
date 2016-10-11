@@ -23,7 +23,9 @@
     <div class="col-md-3">
           <ul class="small list-group">
             <li class="list-group-item">
-              <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-unlock" aria-hidden="true"></i> Nº <%= atendimento.id %></span>
+            <!-- melhorar esses ifs -->
+              <span class="<%= if atendimento.status == 'A'; "label label-info" end %> <%= if atendimento.status == 'F'; "label label-default" end %>"
+               title="<%= if atendimento.status == 'A'; "Atendimento em Aberto" end %> <%= if atendimento.status == 'F'; "Atendimento Fechado" end %>"><i class="<%= if atendimento.status == 'A'; "fa fa-unlock" end %> <%= if atendimento.status == 'F'; "fa fa-lock" end %>" aria-hidden="true"></i> Nº <%= atendimento.id %></span>
               <i class="fa fa-calendar label-tema" aria-hidden="true"></i>
               <%= post_date atendimento.created_at %>
             </li>
@@ -41,7 +43,7 @@
                   
                 </div>
               </div>
-              <%= link_to "", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default btn-xs fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"}, title: 'Finalizar atendimento' %> 
+              <%= if atendimento.status == 'A'; link_to "", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default btn-xs fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"}, title: 'Finalizar atendimento' end %> 
               <button type="button" class="btn btn-default btn-xs fa fa-eye" data-toggle="modal" title="Visualizar atendimento" data-target= <%= "#" + atendimento.id.to_s %> ></button>
               <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
             </li>
