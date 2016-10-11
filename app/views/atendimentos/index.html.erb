@@ -33,8 +33,16 @@
               <%= atendimento.assunto %>
             </li>
             <li class="list-group-item">
-              <%= link_to " Finalizar", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"} %> 
-              <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target= <%= "#" + atendimento.id.to_s %> ><i class="fa fa-eye" aria-hidden="true"> Visualizar</i></button>
+              <div class="row">
+                <div class="col-md-8">
+                  
+                </div>
+                <div class="col-md-4">
+                  
+                </div>
+              </div>
+              <%= link_to "", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default btn-xs fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"}, title: 'Finalizar atendimento' %> 
+              <button type="button" class="btn btn-default btn-xs fa fa-eye" data-toggle="modal" title="Visualizar atendimento" data-target= <%= "#" + atendimento.id.to_s %> ></button>
               <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
             </li>
           </ul>
