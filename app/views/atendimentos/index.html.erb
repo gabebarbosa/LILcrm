@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -28,6 +33,7 @@
               <%= atendimento.assunto %>
             </li>
             <li class="list-group-item">
+              <%= link_to " Finalizar", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default fa fa-check', data: { confirm: "Tem certeza que deseja finalziar o atendimento #{atendimento.id}?"} %> 
               <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target= <%= "#" + atendimento.id.to_s %> ><i class="fa fa-eye" aria-hidden="true"></i></button>
               <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
             </li>

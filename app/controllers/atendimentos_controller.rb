@@ -1,6 +1,6 @@
 class AtendimentosController < ApplicationController
   
-  before_action :set_atendimento, only: [:show, :edit, :update]
+  before_action :set_atendimento, only: [:show, :edit, :update, :encerrar_atendimento]
 
   def index
     #@atendimentos = Atendimento.includes(:cliente, :user, :tipoatendimento ).order("created_at DESC")
@@ -61,11 +61,12 @@ class AtendimentosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 #implementar encerrar atendimento
-  def encerrar
-    @atendimento = Atendimento.find(params[:id])
-    @atendimento.status = "F"
-    redirect_to atendimentos_url, notice: 'Atendimento Finalizado com sucesso.'
+  def encerrar_atendimento
+      @atendimento.update(status: 'F')
+
+      redirect_to atendimentos_url, notice: 'Atendimento Finalizado com sucesso.'
   end
 
   private

@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :comentarios
   resources :tipoatendimentos
   resources :caracteristicas
-  resources :atendimentos, :has_many => :resposta
+  resources :atendimentos, :has_many => :resposta do 
+    patch :encerrar_atendimento, on: :member
+
+  end 
 
 
 
@@ -16,6 +19,8 @@ Rails.application.routes.draw do
   delete 'sign_out' => 'sessions#destroy'
 
   root 'sessions#new'
+
+  #patch 'encerrar_atendimento' => 'atendimentos#encerrar_atendimento'
 
 
 end
