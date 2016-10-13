@@ -63,7 +63,7 @@ class AtendimentosController < ApplicationController
 
 
   def encerrar_atendimento
-      #comentário automático ao finalizar o atendimento.
+      #comentário automático ao finalizar o atendimento....
       @comentario.assign_attributes(:user => current_user.email, :descricao => 'Atendimento finalizado', :atendimento_id => @atendimento.id)
       @atendimento.status = 'F'
       @atendimento.save
