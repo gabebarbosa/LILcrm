@@ -64,7 +64,9 @@ class AtendimentosController < ApplicationController
 
   def encerrar_atendimento
       @atendimento.update(status: 'F')
-      redirect_to atendimentos_url, notice: 'Atendimento Finalizado com sucesso.'
+      #comentário automático ao finalizar o atendimento.
+      Comentario.create(:user => current_user.email, :descricao => 'Atendimento finalizado', :atendimento_id => @atendimento.id)
+      redirect_to atendimentos_url, notice: 'Atendimento Finalizado com sucesso.'     
   end
 
   private
