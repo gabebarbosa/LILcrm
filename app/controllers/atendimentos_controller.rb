@@ -3,8 +3,10 @@ class AtendimentosController < ApplicationController
   before_action :set_atendimento, only: [:show, :edit, :update, :encerrar_atendimento]
 
   def index
-    @atendimentos = Atendimento.includes(:cliente, :user, :tipoatendimento ).order("created_at DESC")
+    @status_buscar = params[:status]
+    #@atendimentos = Atendimento.includes(:cliente, :user, :tipoatendimento ).order("created_at DESC")
     #@atendimentos = Atendimento.order("created_at DESC").where "status like 'A' "
+    @atendimentos = Atendimento.where "status like ?", "%#{@status_buscar}%"
   end
 
 

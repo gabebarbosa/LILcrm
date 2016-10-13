@@ -17,10 +17,8 @@ Rails.application.routes.draw do
   post 'sign_in' => 'sessions#create'
   delete 'sign_out' => 'sessions#destroy'
 
-
+ 
   root 'sessions#new'
-
-  #patch 'encerrar_atendimento' => 'atendimentos#encerrar_atendimento'
 
 
 end
