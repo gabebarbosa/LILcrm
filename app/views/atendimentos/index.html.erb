@@ -14,9 +14,9 @@
       <%= link_to " Novo Atendimento", new_atendimento_path, class: " fa fa-plus-circle btn btn-default btn-xs" %> 
     </div>
     <div align="right" class="col-md-9">
-      <%= link_to "", atendimentos_path(:status => "F"), :method => "get", class: "fa fa-lock btn btn-default btn-xs" %> 
-      <%= link_to "", atendimentos_path(:status => "A"), :method => "get", class: "fa fa-unlock btn btn-default btn-xs" %> 
-      <%= link_to " Todos", atendimentos_path, :method => "get", class: "fa btn btn-default btn-xs" %>
+      <%= link_to "", atendimentos_path(:status => "F"), :method => "get", class: "fa fa-lock btn btn-default btn-xs", title: "Ver atendimentos fechados" %> 
+      <%= link_to "", atendimentos_path(:status => "A"), :method => "get", class: "fa fa-unlock btn btn-default btn-xs", title: "Ver atendimentos abertos" %> 
+      <%= link_to " Todos", atendimentos_path, :method => "get", class: "fa btn btn-default btn-xs", title: "Ver atendimentos fechados e abertos" %>
     </div>
   </div>   
 
