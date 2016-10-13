@@ -63,8 +63,8 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <p>
-                  <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-unlock" aria-hidden="true"></i></span>
-                  <span class="label label-info" title="Atendimento em Aberto"><i class="fa fa-calendar" aria-hidden="true"></i> aberto em <%= post_date atendimento.created_at %></span>
+                  <span class="<%= if atendimento.status == 'A'; "label label-info" end %> <%= if atendimento.status == 'F'; "label label-default" end %>" title="<%= if atendimento.status == 'A'; "Atendimento em Aberto" end %> <%= if atendimento.status == 'F'; "Atendimento Fechado" end %>"><i class="<%= if atendimento.status == 'A'; "fa fa-unlock" end %> <%= if atendimento.status == 'F'; "fa fa-lock" end %>" aria-hidden="true" aria-hidden="true"></i></span>
+                  <span class="<%= if atendimento.status == 'A'; "label label-info" end %> <%= if atendimento.status == 'F'; "label label-default" end %>" title="Atendimento em Aberto"><i class="fa fa-calendar" aria-hidden="true"></i> aberto em <%= post_date atendimento.created_at %></span>
                 </p>
                 <p><i class="fa fa-bookmark label-tema" aria-hidden="true"></i><%= " "+ atendimento.tipoatendimento.descricao %></p>
                 <p><i class="fa fa-user label-tema " aria-hidden="true"></i> <%= atendimento.user.email %></p>
@@ -82,7 +82,7 @@
                     <th><i class="fa fa-comments" aria-hidden="true"></i> Comentários</th>
                   </tr>
                   <tr>
-                    <th><%= link_to 'Adicionar comentário', atendimento, class: "label-tema btn btn-default btn-xs" %></th>
+                    <th ><%= if atendimento.status == 'A'; link_to 'Adicionar comentário', atendimento, class: "label-tema btn btn-default btn-xs" end %></th>
                   </tr>
                 </thead>
 
