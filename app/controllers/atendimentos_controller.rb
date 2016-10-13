@@ -6,7 +6,7 @@ class AtendimentosController < ApplicationController
     @status_buscar = params[:status]
     #@atendimentos = Atendimento.includes(:cliente, :user, :tipoatendimento ).order("created_at DESC")
     #@atendimentos = Atendimento.order("created_at DESC").where "status like 'A' "
-    @atendimentos = Atendimento.where "status like ?", "%#{@status_buscar}%"
+    @atendimentos = Atendimento.order("created_at DESC").where "status like ?", "%#{@status_buscar}%"
   end
 
 
