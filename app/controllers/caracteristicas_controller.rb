@@ -4,7 +4,7 @@ class CaracteristicasController < ApplicationController
   def index
     @descricao_buscar = params[:descricao]
     #@caracteristicas = Caracteristica.all
-    @caracteristicas = Caracteristica.where "descricao like ?", "%#{@descricao_buscar}%"
+    @caracteristicas = Caracteristica.where "descricao ilike ?", "%#{@descricao_buscar}%"
   end
 
   def show

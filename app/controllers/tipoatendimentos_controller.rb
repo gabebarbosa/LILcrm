@@ -4,7 +4,7 @@ class TipoatendimentosController < ApplicationController
   def index
     @descricao_buscar = params[:descricao]
     #@tipoatendimentos = Tipoatendimento.all
-    @tipoatendimentos = Tipoatendimento.where "descricao like ?", "%#{@descricao_buscar}%"
+    @tipoatendimentos = Tipoatendimento.where "descricao ilike ?", "%#{@descricao_buscar}%"
   end
 
   def show

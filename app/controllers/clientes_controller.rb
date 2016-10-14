@@ -4,7 +4,7 @@ class ClientesController < ApplicationController
   def index
     #@clientes = Cliente.all
     @nome_buscar = params[:nome]
-    @clientes = Cliente.where "nome like ?", "%#{@nome_buscar}%"
+    @clientes = Cliente.where "nome ilike ?", "%#{@nome_buscar}%"
   end
 
   def show
