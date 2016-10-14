@@ -48,7 +48,7 @@
                   
                 </div>
               </div>
-              <%= if atendimento.status == 'A'; link_to "", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default btn-xs fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"}, title: 'Finalizar atendimento' end %> 
+              <%= if atendimento.status == 'A'; link_to "", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default btn-xs fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"}, title: 'Finalizar atendimento' end %>
               <button type="button" class="btn btn-default btn-xs fa fa-eye" data-toggle="modal" title="Visualizar atendimento" data-target= <%= "#" + atendimento.id.to_s %> ></button>
               <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
             </li>
@@ -78,8 +78,6 @@
                 <p><strong>Descricao:</strong><%= atendimento.descricao %></p>
               </div>
             </div>
-
-
             <div class="panel panel-default">
               <table class="table table-condensed">
                 <thead>
@@ -90,7 +88,6 @@
                     <th ><%= if atendimento.status == 'A'; link_to 'Adicionar comentário', atendimento, class: "label-tema btn btn-default btn-xs" end %></th>
                   </tr>
                 </thead>
-
                 <tbody>
                   <% atendimento.comentarios.each do |comentario| %>
                     <tr>
@@ -100,15 +97,13 @@
                           <p>
                             <i class="fa fa-user label-tema " aria-hidden="true"></i>
                             <strong>  <%= comentario.user %></strong> 
-                          </p>
-                             
+                          </p>                    
                           </div>
                           <div align="right" class="col-md-6">
                             <i class="fa fa-calendar label-tema " aria-hidden="true"></i>
                             <%= post_date comentario.created_at %> 
                           </div>
                         </div>
-
                         <div class="row">
                           <div class="col-md-12">
                             <%= comentario.descricao %>
@@ -120,18 +115,14 @@
                 </tbody>
               </table>
             </div>
-
-
           </div>
           <div class="modal-footer">
+
             <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
           </div>
         </div>
       </div>
     </div>
-
-
-
     <% end %>
 </div>
 
