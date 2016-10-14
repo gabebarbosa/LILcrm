@@ -2,7 +2,9 @@ class TipoatendimentosController < ApplicationController
   before_action :set_tipoatendimento, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tipoatendimentos = Tipoatendimento.all
+    @descricao_buscar = params[:descricao]
+    #@tipoatendimentos = Tipoatendimento.all
+    @tipoatendimentos = Tipoatendimento.where "descricao like ?", "%#{@descricao_buscar}%"
   end
 
   def show

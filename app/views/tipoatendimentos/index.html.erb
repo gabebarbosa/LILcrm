@@ -3,9 +3,21 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <% button_to "Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: "btn btn-default btn-xs" %>
-    <% link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>
-    <%= link_to " Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: " fa fa-plus-circle btn btn-default btn-xs"%> 
+    <div class="row">
+      <div class="col-md-3">
+        <% button_to "Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: "btn btn-default btn-xs" %>
+        <% link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>
+        <%= link_to " Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: " fa fa-plus-circle btn btn-default btn-xs"%> 
+      </div>
+      <div align="right" class="col-md-9">
+        <%= form_tag tipoatendimentos_path, method: :get do  %>
+            <i class="fa fa-search label-tema" aria-hidden="true"></i>
+            <%= text_field_tag :descricao, @descricao_buscar, class: "input-sm", placeholder: "buscar tipos de atendimentos ... " %>
+            <% button_to "Buscar", nil, class: "fa fa-search btn btn-defaut btn-xs" %>
+        <% end %>
+      </div>
+
+    </div>
   </div>
 </div>
 

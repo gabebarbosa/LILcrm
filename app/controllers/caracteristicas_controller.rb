@@ -2,7 +2,9 @@ class CaracteristicasController < ApplicationController
   before_action :set_caracteristica, only: [:show, :edit, :update, :destroy]
 
   def index
-    @caracteristicas = Caracteristica.all
+    @descricao_buscar = params[:descricao]
+    #@caracteristicas = Caracteristica.all
+    @caracteristicas = Caracteristica.where "descricao like ?", "%#{@descricao_buscar}%"
   end
 
   def show

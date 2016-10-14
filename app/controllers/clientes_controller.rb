@@ -2,7 +2,9 @@ class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
 
   def index
-    @clientes = Cliente.all
+    #@clientes = Cliente.all
+    @nome_buscar = params[:nome]
+    @clientes = Cliente.where "nome like ?", "%#{@nome_buscar}%"
   end
 
   def show
