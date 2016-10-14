@@ -11,19 +11,14 @@
 
 
 <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Descricao</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @tipoatendimentos.each do |tipoatendimento| %>
       <tr>
-        <td><%= tipoatendimento.descricao %></td>
-        <td><%= link_to 'Ver', tipoatendimento %></td>
-        <td><%= link_to 'Editar', edit_tipoatendimento_path(tipoatendimento) %></td>
+        <td><i class="fa fa-bookmark label-tema" aria-hidden="true"></i> <%= tipoatendimento.descricao %></td>
+        <td>
+          <%= link_to ' Editar', edit_tipoatendimento_path(tipoatendimento), class: " fa fa-pencil-square-o btn btn-default btn-xs" %>
+          <% link_to 'Ver', tipoatendimento %>
+        </td>
       </tr>
     <% end %>
   </tbody>
