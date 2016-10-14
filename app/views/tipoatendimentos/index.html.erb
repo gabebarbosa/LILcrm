@@ -10,12 +10,12 @@
 </div>
 
 
-<table class="table table-bordered">
+<table class="table table-condensed table-hover">
   <tbody>
     <% @tipoatendimentos.each do |tipoatendimento| %>
       <tr>
         <td><i class="fa fa-bookmark label-tema" aria-hidden="true"></i> <%= tipoatendimento.descricao %></td>
-        <td>
+        <td align="right">
           <%= link_to ' Editar', edit_tipoatendimento_path(tipoatendimento), class: " fa fa-pencil-square-o btn btn-default btn-xs" %>
           <% link_to 'Ver', tipoatendimento %>
         </td>

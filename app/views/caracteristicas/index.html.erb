@@ -10,12 +10,12 @@
 </div>
 
 
-<table class="table table-bordered">
+<table class="table table-condensed table-hover">
   <tbody>
     <% @caracteristicas.each do |caracteristica| %>
       <tr>
         <td><i class="fa fa-tags label-tema" aria-hidden="true"></i> <%= caracteristica.descricao %></td>
-        <td>
+        <td align="right">
           <%= link_to 'Editar', edit_caracteristica_path(caracteristica), class: " fa fa-pencil-square-o btn btn-default btn-xs" %>
           <% link_to 'ver', caracteristica %>
         </td>
