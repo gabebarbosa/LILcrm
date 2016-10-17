@@ -21,32 +21,23 @@
 </div>
 
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Código</th>
-      <th>Nome</th>
-      <th>Cnpj</th>
-      <th>Contato</th>
-      <th>Telefone</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <% @clientes.each do |cliente| %>
+  <div class="col-md-3">
+    <ul class="small list-group">
+      <li class="list-group-item"><%= cliente.id %> - <strong><%= cliente.nome %></strong></li>
+      <li class="list-group-item">
+        CNPJ: <%= cliente.cnpj %><br>
+        Tel: <%= cliente.telefone %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to 'ver', cliente %><%= link_to 'Editar', edit_cliente_path(cliente) %>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @clientes.each do |cliente| %>
-      <tr>
-        <td><%= cliente.id %></td>
-        <td><%= cliente.nome %></td>
-        <td><%= cliente.cnpj %></td>
-        <td><%= cliente.contato %></td>
-        <td><%= cliente.telefone %></td>
-        <td><%= link_to 'ver', cliente %></td>
-        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 
 
