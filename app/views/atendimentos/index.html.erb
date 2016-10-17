@@ -27,7 +27,7 @@
     <% @atendimentos.each do |atendimento| %>
     <div class="col-md-3">
           <ul class="small list-group">
-            <li class="list-group-item">
+            <li class="list-group-item <%= if atendimento.status == 'A'; "list-group-item-info" end %> ">
             <!-- melhorar esses ifs -->
               <span class="<%= if atendimento.status == 'A'; "label label-info" end %> <%= if atendimento.status == 'F'; "label label-default" end %>"
                title="<%= if atendimento.status == 'A'; "Atendimento em Aberto" end %> <%= if atendimento.status == 'F'; "Atendimento Fechado" end %>"><i class="<%= if atendimento.status == 'A'; "fa fa-unlock" end %> <%= if atendimento.status == 'F'; "fa fa-lock" end %>" aria-hidden="true"></i> Nº <%= atendimento.id %></span>

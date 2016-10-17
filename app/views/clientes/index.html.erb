@@ -25,13 +25,14 @@
   <% @clientes.each do |cliente| %>
   <div class="col-md-3">
     <ul class="small list-group">
-      <li class="list-group-item"><%= cliente.id %> - <strong><%= cliente.nome %></strong></li>
+      <strong><%= link_to cliente.nome, cliente, class: 'list-group-item', title: 'ver cliente', align: 'center' %></strong>
       <li class="list-group-item">
-        CNPJ: <%= cliente.cnpj %><br>
-        Tel: <%= cliente.telefone %>
+        <i class="fa fa-book label-tema label-tema" aria-hidden="true"></i> 5 Atendimentos abertos<br>
+        <i class="fa fa-money label-tema label-tema" aria-hidden="true"></i> 2 Títulos em aberto<br>
       </li>
       <li class="list-group-item">
-        <%= link_to 'ver', cliente %><%= link_to 'Editar', edit_cliente_path(cliente) %>
+        <% link_to '', cliente, class: 'btn btn-default btn-xs fa fa-eye', title: 'ver cliente' %>
+        <%= link_to '', edit_cliente_path(cliente), class: 'btn btn-default btn-xs fa fa-pencil-square-o', title: 'editar cliente' %>
       </li>
     </ul>
   </div>
