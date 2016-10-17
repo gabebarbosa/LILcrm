@@ -23,7 +23,7 @@
           <li><i class="fa fa-calendar label-tema" aria-hidden="true"></i> Agenda</li>
           <li><i class="fa fa-money label-tema" aria-hidden="true"></i> Finanças</li>
         </ul>
-        <p><%= link_to "Cadastre-se aqui!", new_user_path %></p>
+        <p><%= button_to " Cadastrar usuário!", new_user_path, :method => "get", class: 'btn btn-default btn-xs fa fa-user-plus' %></p>
       </div>
     </div>
   </div>
