@@ -24,23 +24,47 @@
 <div class="row">
   <% @clientes.each do |cliente| %>
   <div class="col-md-3">
-    <ul class="small list-group">
-      <strong><%= link_to cliente.nome, cliente, class: 'list-group-item', title: 'ver cliente', align: 'center' %></strong>
-      <li class="list-group-item">
-        <i class="fa fa-book label-tema label-tema" aria-hidden="true"></i> 5 Atendimentos abertos<br>
-        <i class="fa fa-money label-tema label-tema" aria-hidden="true"></i> 2 Títulos em aberto<br>
+    <ul class="small list-group ">
+      <strong><% link_to cliente.nome, cliente, class: 'list-group-item', title: 'ver cliente', align: 'center' %></strong>
+      <li class="list-group-item list-group-item-info" align="center">
+        <strong><%= cliente.nome %></strong>
       </li>
       <li class="list-group-item">
-        <% link_to '', cliente, class: 'btn btn-default btn-xs fa fa-eye', title: 'ver cliente' %>
-        <%= link_to '', edit_cliente_path(cliente), class: 'btn btn-default btn-xs fa fa-pencil-square-o', title: 'editar cliente' %>
+        <i class="fa fa-book label-tema label-tema" aria-hidden="true"></i> x Atendimentos abertos<br>
+        <i class="fa fa-money label-tema label-tema" aria-hidden="true"></i> x Títulos em aberto<br>
+      </li>
+      <li class="list-group-item">
+        <% link_to ' visualizar', cliente, class: 'btn btn-default btn-xs fa fa-eye', title: 'ver cliente' %>
+        <button type="button" class="btn btn-default btn-xs fa fa-eye" data-toggle="modal" title="Visualizar cliente" data-target= <%= "#" + cliente.id.to_s %> > visualizar</button>
+        <%= link_to ' editar', edit_cliente_path(cliente), class: 'btn btn-default btn-xs fa fa-pencil-square-o', title: 'editar cliente' %>
       </li>
     </ul>
   </div>
-  <% end %>
+  <!-- Modal ver cliente -->
+  <div id=<%= cliente.id.to_s %> class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 align="center" class="label-tema modal-title"><i class="fa fa-eye" aria-hidden="true"></i><%= " "+ cliente.nome %></h4>
+        </div>
+        <div class="modal-body">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p><strong>Nome:</strong><%= cliente.nome %></p>
+              <p><strong>CNPJ:</strong><%= cliente.cnpj %></p>
+              <p><strong>colocar outras coisas aqui</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>  
 </div>
-
-
-
 
 
 

@@ -48,8 +48,8 @@
                   
                 </div>
               </div>
-              <%= if atendimento.status == 'A'; link_to "", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default btn-xs fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"}, title: 'Finalizar atendimento' end %>
-              <button type="button" class="btn btn-default btn-xs fa fa-eye" data-toggle="modal" title="Visualizar atendimento" data-target= <%= "#" + atendimento.id.to_s %> ></button>
+              <%= if atendimento.status == 'A'; link_to " finalizar", [:encerrar_atendimento, atendimento], method: :patch, class: 'btn btn-default btn-xs fa fa-check', data: { confirm: "Tem certeza que deseja finalizar o atendimento #{atendimento.id}?"}, title: 'Finalizar atendimento' end %>
+              <button type="button" class="btn btn-default btn-xs fa fa-eye" data-toggle="modal" title="Visualizar atendimento" data-target= <%= "#" + atendimento.id.to_s %> > visualizar</button>
               <i class="fa fa-comments" aria-hidden="true"><%= atendimento.comentarios.count %></i>
             </li>
           </ul>
