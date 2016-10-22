@@ -4,16 +4,18 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-9">
         <% button_to "Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: "btn btn-default btn-xs" %>
         <% link_to 'Novo Tipo de atendimento', new_tipoatendimento_path %>
         <%= link_to " Novo Tipo de atendimento", new_tipoatendimento_path, :method => "get", class: " fa fa-plus-circle btn btn-default btn-xs"%> 
       </div>
-      <div align="right" class="col-md-9">
+      <div align="right" class="col-md-3">
         <%= form_tag tipoatendimentos_path, method: :get do  %>
-            <i class="fa fa-search label-tema" aria-hidden="true"></i>
-            <%= text_field_tag :descricao, @descricao_buscar, class: "input-sm", placeholder: "buscar tipos de atendimentos ... " %>
-            <% button_to "Buscar", nil, class: "fa fa-search btn btn-defaut btn-xs" %>
+          <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3"><i class="fa fa-search label-tema" aria-hidden="true"></i></span>
+              <%= text_field_tag :descricao, @descricao_buscar, class: "form-control", placeholder: "buscar tipos de atendimentos ... " %>
+              <% button_to "Buscar", nil, class: "fa fa-search btn btn-defaut btn-xs" %>
+          </div>  
         <% end %>
       </div>
 

@@ -4,16 +4,19 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-9">
         <% button_to "Novo Cliente", new_cliente_path, :method => "get", class: "btn btn-default btn-xs" %>
         <% link_to 'Novo Cliente', new_cliente_path %>
         <%= link_to " Novo Cliente", new_cliente_path, :method => "get", class: " fa fa-plus-circle btn btn-default btn-xs"%> 
       </div>
-      <div align="right" class="col-md-9">
+
+      <div align="right" class="col-md-3">
         <%= form_tag clientes_path, method: :get do  %>
-            <i class="fa fa-search label-tema" aria-hidden="true"></i>
-            <%= text_field_tag :nome, @nome_buscar, class: "input-sm", placeholder: "buscar clientes ... " %>
-            <% button_to "Buscar", nil, class: "fa fa-search btn btn-defaut btn-xs" %>
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3"><i class="fa fa-search label-tema" aria-hidden="true"></i></span>
+              <%= text_field_tag :nome, @nome_buscar, class: "form-control", placeholder: "buscar clientes ... " %>
+              <% button_to "Buscar", nil, class: "fa fa-search btn btn-defaut btn-xs" %>
+            </div>            
         <% end %>
       </div>
     </div>
@@ -30,8 +33,8 @@
         <strong><%= cliente.nome %></strong>
       </li>
       <li class="list-group-item">
-        <i class="fa fa-book label-tema label-tema" aria-hidden="true"></i> x Atendimentos abertos<br>
-        <i class="fa fa-money label-tema label-tema" aria-hidden="true"></i> x Títulos em aberto<br>
+        <i class="fa fa-book label-tema label-tema" aria-hidden="true"></i> Atendimentos abertos<br>
+        <i class="fa fa-money label-tema label-tema" aria-hidden="true"></i> Títulos em aberto<br>
       </li>
       <li class="list-group-item">
         <% link_to ' visualizar', cliente, class: 'btn btn-default btn-xs fa fa-eye', title: 'ver cliente' %>
