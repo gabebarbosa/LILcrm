@@ -1,10 +1,14 @@
-* git clone https://github.com/gabebarbosa/lilcrm.git
+`git clone https://github.com/gabebarbosa/lilcrm.git`
 
-* cd lilcrm
 
-* bundle install
+`cd lilcrm`
 
-* rake db:create
 
-* rake db:migrate
+`bundle install`
+
+
+`rake db:create`
+
+
+`rake db:migrate`
 
