@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :grupos
   resources :comentarios
   resources :tipoatendimentos
   resources :caracteristicas
